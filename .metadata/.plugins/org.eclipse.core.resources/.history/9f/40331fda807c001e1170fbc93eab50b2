@@ -8,46 +8,44 @@
 #include "fns_automata.h"
 
 int status[2] = 0;
-int counterNUM;
 
 void fns_automata_run(){
-	status[0] = 6;
-	counter[1] = counter_RED;
-for(int i = 0; i < 2; i ++){
+	if(timer3_flag)
+	int counter;
+
+	counter[1] = ;
+for(int i = 0, i < 2, i ++){
 
 }
 
-	switch(status[1]){
+	switch(status){
 	case INIT:
 		ALL_LIGHT_OFF();
-		status[1] = RED_AUTO;
+		status = RED_AUTO;
 		setTimer1(counter_RED*100);
-		counterNUM = 0;
+		counter = 0;
 		break;
 	case RED_AUTO:
 		RED_LIGHT1();
 
 
 		if(timer1_flag){
-			status[1] = GREEN_AUTO;
+			status = GREEN_AUTO;
 			setTimer1(counter_GREEN*100);
-			counterNUM = 0;
 		}
 		break;
 	case GREEN_AUTO:
 		GREEN_LIGHT1();
 		if(timer1_flag){
-			status[1] = YELLOW_AUTO;
+			status = YELLOW_AUTO;
 			setTimer1(counter_AMBER*100);
-			counterNUM = 0;
 		}
 		break;
 	case YELLOW_AUTO:
 		YELLOW_LIGHT1();
 		if(timer1_flag){
-			status[1] = RED_AUTO;
+			status = RED_AUTO;
 			setTimer1(counter_RED*100);
-			counterNUM = 0;
 		}
 		break;
 	default :

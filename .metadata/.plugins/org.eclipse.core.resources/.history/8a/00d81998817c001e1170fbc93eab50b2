@@ -11,7 +11,9 @@ int status[2] = 0;
 int counterNUM;
 
 void fns_automata_run(){
-	status[0] = 6;
+	if(timer3_flag)
+	counter++;
+
 	counter[1] = counter_RED;
 for(int i = 0; i < 2; i ++){
 
