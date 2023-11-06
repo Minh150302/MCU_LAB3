@@ -1,0 +1,25 @@
+/*
+ * fns_automata.c
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Huy Minh
+ */
+
+#include "fns_automata.h"
+
+void fns_automata_run(){
+	switch(status){
+	case INIT:
+		status = RED_AUTO;
+		ALL_LED_OFF
+
+		break;
+	case RED_AUTO:
+
+		break;
+	case YELLOW_AUTO:
+		break;
+	case GREEN_AUTO:
+		break;
+	}
+}

@@ -1,0 +1,71 @@
+/*
+ * global.c
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Huy Minh
+ */
+
+#include "global.h"
+
+
+int status = 0;
+
+
+
+void RED_LIGHT(
+		GPIO_TypeDef* LED_RED_GPIO_Port, uint16_t LED_RED_PIN,
+		GPIO_TypeDef* LED_AMBER_GPIO_Port, uint16_t LED_AMBER_PIN,
+		GPIO_TypeDef* LED_GREEN_GPIO_Port, uint16_t LED_GREEN_PIN){
+	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_PIN, SET);
+	  HAL_GPIO_WritePin(LED_AMBER_GPIO_Port, LED_AMBER_PIN, RESET);
+	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_PIN, RESET);
+}
+
+void YELLOW_LIGHT(
+		GPIO_TypeDef* LED_RED_GPIO_Port, uint16_t LED_RED_PIN,
+		GPIO_TypeDef* LED_AMBER_GPIO_Port, uint16_t LED_AMBER_PIN,
+		GPIO_TypeDef* LED_GREEN_GPIO_Port, uint16_t LED_GREEN_PIN){
+	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_PIN, RESET);
+	  HAL_GPIO_WritePin(LED_AMBER_GPIO_Port, LED_AMBER_PIN, SET);
+	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_PIN, RESET);
+}
+
+void GREEN_LIGHT(
+		GPIO_TypeDef* LED_RED_GPIO_Port, uint16_t LED_RED_PIN,
+		GPIO_TypeDef* LED_AMBER_GPIO_Port, uint16_t LED_AMBER_PIN,
+		GPIO_TypeDef* LED_GREEN_GPIO_Port, uint16_t LED_GREEN_PIN){
+	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_PIN, RESET);
+	  HAL_GPIO_WritePin(LED_AMBER_GPIO_Port, LED_AMBER_PIN, RESET);
+	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_PIN, SET);
+
+}
+
+
+
+void RED_LIGHT2(){
+	return RED_LIGHT(
+	  LED_RED2_GPIO_Port, LED_RED2_PIN,
+	  LED_AMBER2_GPIO_Port, LED_AMBER2_PIN,
+	  LED_GREEN2_GPIO_Port, LED_GREEN2_PIN
+	  );
+}
+
+void YELLOW_LIGHT2()(
+	return YELLOW_LIGHT(
+	  LED_RED2_GPIO_Port, LED_RED2_PIN,
+	  LED_AMBER2_GPIO_Port, LED_AMBER2_PIN,
+	  LED_GREEN2_GPIO_Port, LED_GREEN2_PIN
+	  );
+}
+
+void GREEN_LIGHT2()
+	return GREEN_LIGHT(
+	  LED_RED2_GPIO_Port, LED_RED2_PIN,
+	  LED_AMBER2_GPIO_Port, LED_AMBER2_PIN,
+	  LED_GREEN2_GPIO_Port, LED_GREEN2_PIN
+	  );
+}
+
+void LED_OFF(){
+
+}

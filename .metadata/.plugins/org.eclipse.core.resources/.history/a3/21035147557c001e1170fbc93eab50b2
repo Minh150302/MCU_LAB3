@@ -1,0 +1,15 @@
+/*
+ * fns_automata.h
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Huy Minh
+ */
+
+#ifndef INC_FNS_AUTOMATA_H_
+#define INC_FNS_AUTOMATA_H_
+
+#include "global.h"
+
+void fns_automata_run();
+
+#endif /* INC_FNS_AUTOMATA_H_ */

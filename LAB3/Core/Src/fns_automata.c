@@ -1,0 +1,61 @@
+/*
+ * fns_automata.c
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Huy Minh
+ */
+
+#include "fns_automata.h"
+
+void fns_automata_run1(){
+	switch(mode){
+
+	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
+	default:
+		break;
+	}
+
+	if(isButton1Pressed()){
+
+	}
+}
+
+void fns_automata_run(){
+	switch(status){
+	case INIT:
+		ALL_LIGHT_OFF();
+		status = RED_AUTO;
+		setTimer1(500);
+		break;
+	case RED_AUTO:
+		RED_LIGHT1();
+		if(timer1_flag){
+			status = GREEN_AUTO;
+			setTimer1(300);
+		}
+		break;
+	case GREEN_AUTO:
+		GREEN_LIGHT1();
+		if(timer1_flag){
+			status = YELLOW_AUTO;
+			setTimer1(200);
+		}
+		break;
+	case YELLOW_AUTO:
+		YELLOW_LIGHT1();
+		if(timer1_flag){
+			status = RED_AUTO;
+			setTimer1(500);
+		}
+		break;
+	default :
+		break;
+	}
+}

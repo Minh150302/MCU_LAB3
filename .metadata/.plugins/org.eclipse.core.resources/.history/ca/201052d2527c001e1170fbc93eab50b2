@@ -1,0 +1,10 @@
+/*
+ * fns_automata.c
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Huy Minh
+ */
+
+#include "fns_automata.h"
+
+void
