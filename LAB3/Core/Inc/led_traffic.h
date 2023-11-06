@@ -20,5 +20,7 @@ void RED_LIGHT2();
 void YELLOW_LIGHT2();
 void GREEN_LIGHT2();
 
+void RED_BLINK();
+
 
 #endif /* INC_LED_TRAFFIC_H_ */

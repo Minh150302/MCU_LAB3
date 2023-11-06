@@ -6,8 +6,11 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/button.c \
+../Core/Src/button2.c \
 ../Core/Src/display7SEG.c \
 ../Core/Src/fns_automata.c \
+../Core/Src/fns_mode.c \
+../Core/Src/fns_mode2.c \
 ../Core/Src/global.c \
 ../Core/Src/led_traffic.c \
 ../Core/Src/main.c \
@@ -20,8 +23,11 @@ C_SRCS += \
 
 OBJS += \
 ./Core/Src/button.o \
+./Core/Src/button2.o \
 ./Core/Src/display7SEG.o \
 ./Core/Src/fns_automata.o \
+./Core/Src/fns_mode.o \
+./Core/Src/fns_mode2.o \
 ./Core/Src/global.o \
 ./Core/Src/led_traffic.o \
 ./Core/Src/main.o \
@@ -34,8 +40,11 @@ OBJS += \
 
 C_DEPS += \
 ./Core/Src/button.d \
+./Core/Src/button2.d \
 ./Core/Src/display7SEG.d \
 ./Core/Src/fns_automata.d \
+./Core/Src/fns_mode.d \
+./Core/Src/fns_mode2.d \
 ./Core/Src/global.d \
 ./Core/Src/led_traffic.d \
 ./Core/Src/main.d \

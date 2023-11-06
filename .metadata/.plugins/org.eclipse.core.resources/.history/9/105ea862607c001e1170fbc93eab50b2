@@ -1,0 +1,15 @@
+/*
+ * fns_mode.c
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Huy Minh
+ */
+
+#include "fns_mode.h"
+
+void fns_mode(){
+	case INIT:
+		break;
+	case MODE_1:
+
+}

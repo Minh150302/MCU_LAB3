@@ -1,0 +1,42 @@
+/*
+ * fns_mode.c
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Huy Minh
+ */
+
+#include "fns_mode.h"
+
+void fns_mode(){
+	switch(mode){
+		case INIT:
+			setTimer1(100);
+			ALL_LIGHT_OFF();
+			mode = MODE_1;
+			status = RED_AUTO;
+			break;
+		case MODE_1:
+			fns_automata_run();
+			if(isButton1Pressed()){
+				mode = MODE_2;
+				setTimer2(10000);
+			}
+			break;
+		case MODE_2:
+			run_MODE2();
+
+			if(timer2_flag == 0) mode = MODE_1;
+
+			if(isButton1Pressed()){
+				mode = MODE_3;
+				setTimer2(10000);
+			}
+			break;
+		case MODE_3:
+			break;
+		case MODE_4:
+			break;
+		default:
+			break;
+	}
+}

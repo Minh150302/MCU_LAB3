@@ -1,0 +1,13 @@
+/*
+ * fns_mode2.c
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Huy Minh
+ */
+
+
+#include "fns_mode2.h"
+
+void fns_mode2_run(){
+
+}

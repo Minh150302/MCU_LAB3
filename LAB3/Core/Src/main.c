@@ -95,10 +95,15 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  status = INIT;
+//  status = INIT;
+  mode = INIT;
   while (1)
   {
-	  fns_automata_run();
+	  if(timer2_flag){
+		  setTimer2(250);
+		  update7SEG(index++);
+	  }
+	  fns_mode_run();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

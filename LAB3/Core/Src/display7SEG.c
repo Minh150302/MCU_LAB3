@@ -7,6 +7,9 @@
 
 #include "display7SEG.h"
 
+int index_led = 1;
+int counter[4] = {0, 0, 0, 0};
+
 void set_display7SEG(int counter,
 		GPIO_TypeDef* a_seg_GPIO_Port, uint16_t a_seg_Pin,
 		GPIO_TypeDef* b_seg_GPIO_Port, uint16_t b_seg_Pin,
@@ -124,3 +127,63 @@ void display7SEG(int counter){
 			SEG6_GPIO_Port,  SEG6_Pin
 			);
 }
+
+
+void update7SEG(int index){
+	index = index % 4;
+    switch (index){
+        case 0:
+            //Display the first 7SEG with counter[0]
+        	display7SEG(counter[0]);
+        	  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
+        	  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
+        	  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
+        	  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
+            break;
+        case 1:
+            //Display the second 7SEG with counter[1]
+        	display7SEG(counter[1]);
+			  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
+			  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
+			  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
+			  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
+            break;
+        case 2:
+//            Display the third 7SEG with counter[2]
+        	display7SEG(counter[2]);
+			  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
+			  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
+			  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
+			  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
+            break;
+        case 3:
+//            Display the forth 7SEG with counter[3]
+        	display7SEG(counter[3]);
+			  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
+			  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
+			  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
+			  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 0);
+            break;
+        default:
+            break;
+    }
+}
+
+void set_update7SEG_VALUE(int counter[], int NUM ){
+	//mode1
+	counter[1] = counter[3];
+	counter[0] = counter[2];
+
+	//mode2, 3, 4
+	counter[0] = counter[3];
+	counter[1] = NUM % 10;
+	counter[2] = NUM / 10;
+}
+
+
+
+
+
+
+
+

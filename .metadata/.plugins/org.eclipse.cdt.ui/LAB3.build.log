@@ -1,10 +1,22 @@
-11:38:25 **** Incremental Build of configuration Debug for project LAB3 ****
+15:08:05 **** Incremental Build of configuration Debug for project LAB3 ****
 make -j8 all 
-arm-none-eabi-size   LAB3.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7852	     40	   1664	   9556	   2554	LAB3.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../Core/Src/global.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/global.d" -MT"Core/Src/global.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/global.o"
+In file included from ../Core/Src/global.c:8:
+../Core/Inc/global.h:40:12: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   40 | extern int index;
+      |            ^~~~~
+arm-none-eabi-gcc -o "LAB3.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Study\MCU\LAD_MCU\LAB3\LAB3\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/button2.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: multiple definition of `MAX_LED'; ./Core/Src/button.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: first defined here
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/display7SEG.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: multiple definition of `MAX_LED'; ./Core/Src/button.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: first defined here
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/fns_automata.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: multiple definition of `MAX_LED'; ./Core/Src/button.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: first defined here
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/fns_mode.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: multiple definition of `MAX_LED'; ./Core/Src/button.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: first defined here
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/fns_mode2.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: multiple definition of `MAX_LED'; ./Core/Src/button.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: first defined here
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/global.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: multiple definition of `MAX_LED'; ./Core/Src/button.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: first defined here
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/led_traffic.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: multiple definition of `MAX_LED'; ./Core/Src/button.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: first defined here
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/main.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: multiple definition of `MAX_LED'; ./Core/Src/button.o:D:/Study/MCU/LAD_MCU/LAB3/LAB3/Debug/../Core/Inc/global.h:39: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:68: LAB3.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
 
-11:38:25 Build Finished. 0 errors, 0 warnings. (took 172ms)
+15:08:05 Build Failed. 9 errors, 1 warnings. (took 491ms)
 

@@ -1,2 +1,1 @@
-fns_automata.c:10:6:fns_automata_run1	8	static
-fns_automata.c:30:6:fns_automata_run	8	static
+fns_automata.c:10:6:fns_automata_run	16	static
