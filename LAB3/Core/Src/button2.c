@@ -7,10 +7,6 @@
 
 #include "button.h"
 
-#include "button.h"
-#include "main.h"
-
-
 #define NUMBER_OF_BUTTONS 3
 
 int KeyReg0[NUMBER_OF_BUTTONS];

@@ -7,8 +7,8 @@
 
 #include "display7SEG.h"
 
-int index_led = 1;
-int counter[4] = {0, 0, 0, 0};
+//int index_led = 1;
+//int counter[4] = {0, 0, 0, 0};
 
 void set_display7SEG(int counter,
 		GPIO_TypeDef* a_seg_GPIO_Port, uint16_t a_seg_Pin,
@@ -169,15 +169,18 @@ void update7SEG(int index){
     }
 }
 
-void set_update7SEG_VALUE(int NUM ){
+void set_update7SEG_VALUE(){
 	//mode1
-	counter[3] = counter[1];
-	counter[2] = counter[0];
-
+	if (mode == MODE_1){
+		counter[3] = counter[1];
+		counter[2] = counter[0];
+	}
+	else{
 	//mode2, 3, 4
-	counter[3] = counter[1];
-	counter[1] = NUM % 10;
-	counter[2] = NUM / 10;
+		counter[3] = counter[1];
+		counter[1] = NUM % 10;
+		counter[2] = NUM / 10;
+	}
 }
 
 

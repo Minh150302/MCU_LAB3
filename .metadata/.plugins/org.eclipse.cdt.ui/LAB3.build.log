@@ -1,10 +1,27 @@
-12:10:05 **** Incremental Build of configuration Debug for project LAB3 ****
+13:49:24 **** Incremental Build of configuration Debug for project LAB3 ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/global.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/global.d" -MT"Core/Src/global.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/global.o"
+In file included from ../Core/Src/global.c:8:
+../Core/Inc/global.h:42:12: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   42 | extern int index;
+      |            ^~~~~
+arm-none-eabi-gcc -o "LAB3.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Study\MCU\LAD_MCU\LAB3\LAB3\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LAB3.elf
+ 
 arm-none-eabi-size   LAB3.elf 
+arm-none-eabi-objdump -h -S  LAB3.elf  > "LAB3.list"
+arm-none-eabi-objcopy  -O ihex  LAB3.elf  "LAB3.hex"
    text	   data	    bss	    dec	    hex	filename
-  10356	     72	   1736	  12164	   2f84	LAB3.elf
+  10840	     72	   1760	  12672	   3180	LAB3.elf
+arm-none-eabi-objcopy  -O binary  LAB3.elf  "LAB3.bin"
 Finished building: default.size.stdout
  
+Finished building: LAB3.hex
+Finished building: LAB3.bin
+ 
+ 
+Finished building: LAB3.list
+ 
 
-12:10:06 Build Finished. 0 errors, 0 warnings. (took 164ms)
+13:49:25 Build Finished. 0 errors, 1 warnings. (took 614ms)
 

@@ -7,7 +7,7 @@
 
 #include "software_timer.h"
 
-int timer1_counter[2] = {0, 0};
+int timer1_counter[2] ;
 int timer1_flag[2] = {0, 0};
 int timer2_counter = 0;
 int timer2_flag = 0;
