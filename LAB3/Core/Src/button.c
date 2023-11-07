@@ -1,58 +1,66 @@
-///*
-// * button.c
-// *
-// *  Created on: Nov 6, 2023
-// *      Author: Huy Minh
-// */
-//
-//#include "button.h"
-//
-//int button1_flag = 0;
-//
-//
-//int KeyReg0 = NORMAL_STATE;
-//int KeyReg1 = NORMAL_STATE;
-//
-//int KeyReg2 = NORMAL_STATE;
-//
-//
-//int KeyReg3 = NORMAL_STATE;
-//int TimerForKeyPress = 200;
-//
-//int isButton1Pressed(){
-//	if(button1_flag == 1){
-//		button1_flag = 0;
-//		return 1;
-//	}
-//	return 0;
-//}
-//
-////void SubKeyProcess(){
-////	button1_flag = 1;
-////}
-//
-//void getKeyInput1(){
-//	KeyReg0 = KeyReg1;
-//	KeyReg1 = KeyReg2;
-//	KeyReg2 = HAL_GPIO_ReadPin(BUTTON1_GPIO_Port, BUTTON1_Pin);
-//	if((KeyReg0 == KeyReg1) && (KeyReg1 == KeyReg2)){
-//		if(KeyReg3 != KeyReg2){
-//			KeyReg3 = KeyReg2;
-//			if(KeyReg2 == PRESSED_STATE){
-////				SubKeyProcess();
-//				button1_flag = 1;
-//				TimerForKeyPress = 200;
-//			}
-//		}else{
-//			TimerForKeyPress--;
-//			if(TimerForKeyPress == 0){
-//				KeyReg3 = NORMAL_STATE;
-//
-////				if(KeyReg2 == PRESSED_STATE){
-////					SubKeyProcess();
-////				}
-////				TimerForKeyPress = 200;
-//			}
-//		}
-//	}
-//}
+/*
+ * button2.c
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Huy Minh
+ */
+
+#include "button.h"
+
+#define NUMBER_OF_BUTTONS 3
+
+int KeyReg0[NUMBER_OF_BUTTONS];
+int KeyReg1[NUMBER_OF_BUTTONS];
+int KeyReg2[NUMBER_OF_BUTTONS];
+int KeyReg3[NUMBER_OF_BUTTONS];
+int TimeOutForKeyPress[NUMBER_OF_BUTTONS];
+int flag[NUMBER_OF_BUTTONS];
+uint16_t gpio_pin[NUMBER_OF_BUTTONS] = {BUTTON1_Pin, BUTTON2_Pin, BUTTON3_Pin};
+GPIO_TypeDef* gpio_port[NUMBER_OF_BUTTONS] = {BUTTON1_GPIO_Port, BUTTON2_GPIO_Port, BUTTON3_GPIO_Port};
+
+void initializeArrays_for_Button() {
+  for (int i = 0; i < NUMBER_OF_BUTTONS; ++i) {
+    KeyReg0[i] = NORMAL_STATE;
+    KeyReg1[i] = NORMAL_STATE;
+    KeyReg2[i] = NORMAL_STATE;
+    KeyReg3[i] = NORMAL_STATE;
+    TimeOutForKeyPress[i] = 500;
+    flag[i] = 0;
+  }
+}
+void subKeyProcess(int index) {
+  flag[index] = 1;
+}
+
+int isButtonPressed(int index){
+  if(flag[index] == 1) {
+    flag[index] = 0;
+    return 1;
+  }
+  return 0;
+}
+
+void getKeyInput() {
+  for(int i = 0; i < NUMBER_OF_BUTTONS; i++) {
+    KeyReg0[i] = KeyReg1[i];
+    KeyReg1[i] = KeyReg2[i];
+    KeyReg2[i] = HAL_GPIO_ReadPin(gpio_port[i], gpio_pin[i]);
+
+    if ((KeyReg1[i] == KeyReg0[i]) && (KeyReg1[i] == KeyReg2[i])){
+      if (KeyReg3[i] != KeyReg2[i]){
+        KeyReg3[i] = KeyReg2[i];
+        if (KeyReg2[i] == PRESSED_STATE) {
+          subKeyProcess(i);
+        }
+      } else {
+        TimeOutForKeyPress[i]--;
+        if (TimeOutForKeyPress[i] == 0){
+          TimeOutForKeyPress[i] = 200;
+          if (KeyReg2[i] == PRESSED_STATE){
+            subKeyProcess(i);
+          }
+        }
+      }
+    }
+  }
+}

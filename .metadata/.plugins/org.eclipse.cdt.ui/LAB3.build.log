@@ -1,44 +1,32 @@
-14:21:48 **** Incremental Build of configuration Debug for project LAB3 ****
+16:02:38 **** Incremental Build of configuration Debug for project LAB3 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/fns_mode.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fns_mode.d" -MT"Core/Src/fns_mode.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fns_mode.o"
-In file included from ../Core/Inc/fns_mode.h:11,
-                 from ../Core/Src/fns_mode.c:8:
+arm-none-eabi-gcc "../Core/Src/func_setting_mode.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/func_setting_mode.d" -MT"Core/Src/func_setting_mode.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/func_setting_mode.o"
+In file included from ../Core/Inc/func_setting_mode.h:11,
+                 from ../Core/Src/func_setting_mode.c:8:
 ../Core/Inc/global.h:42:12: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
    42 | extern int index;
       |            ^~~~~
-../Core/Src/fns_mode.c: In function 'fns_mode_run':
-../Core/Src/fns_mode.c:16:6: warning: implicit declaration of function 'update7SEG' [-Wimplicit-function-declaration]
-   16 |      update7SEG(index++);
-      |      ^~~~~~~~~~
-../Core/Src/fns_mode.c:21:4: warning: implicit declaration of function 'run_MODE2' [-Wimplicit-function-declaration]
-   21 |    run_MODE2();
-      |    ^~~~~~~~~
-../Core/Src/fns_mode.c:32:4: warning: implicit declaration of function 'fns_automata_run' [-Wimplicit-function-declaration]
-   32 |    fns_automata_run();
-      |    ^~~~~~~~~~~~~~~~
-../Core/Src/fns_mode.c:61:4: warning: implicit declaration of function 'run_MODE3' [-Wimplicit-function-declaration]
-   61 |    run_MODE3();
-      |    ^~~~~~~~~
-../Core/Src/fns_mode.c:76:4: warning: implicit declaration of function 'run_MODE4' [-Wimplicit-function-declaration]
-   76 |    run_MODE4();
-      |    ^~~~~~~~~
+../Core/Src/func_setting_mode.c: In function 'run_MODE2':
+../Core/Src/func_setting_mode.c:14:2: warning: implicit declaration of function 'set_update7SEG_VALUE' [-Wimplicit-function-declaration]
+   14 |  set_update7SEG_VALUE();
+      |  ^~~~~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "LAB3.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Study\MCU\LAD_MCU\LAB3\LAB3\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LAB3.elf
  
 arm-none-eabi-size   LAB3.elf 
 arm-none-eabi-objdump -h -S  LAB3.elf  > "LAB3.list"
 arm-none-eabi-objcopy  -O ihex  LAB3.elf  "LAB3.hex"
-   text	   data	    bss	    dec	    hex	filename
-  11128	     72	   1760	  12960	   32a0	LAB3.elf
 arm-none-eabi-objcopy  -O binary  LAB3.elf  "LAB3.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11116	     72	   1760	  12948	   3294	LAB3.elf
 Finished building: default.size.stdout
  
-Finished building: LAB3.hex
 Finished building: LAB3.bin
+Finished building: LAB3.hex
  
  
 Finished building: LAB3.list
  
 
-14:21:49 Build Finished. 0 errors, 6 warnings. (took 612ms)
+16:02:39 Build Finished. 0 errors, 2 warnings. (took 677ms)
 

@@ -1,8 +1,6 @@
 "./Core/Src/button.o"
-"./Core/Src/button2.o"
 "./Core/Src/display7SEG.o"
 "./Core/Src/fns_automata.o"
-"./Core/Src/fns_automata2.o"
 "./Core/Src/fns_mode.o"
 "./Core/Src/func_setting_mode.o"
 "./Core/Src/global.o"
