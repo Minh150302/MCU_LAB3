@@ -10,17 +10,14 @@
 int count = 0;
 
 void run_MODE2(){
-	counter[0] = 2;
-	set_update7SEG_VALUE();
 	if(isButtonPressed(1)){
-		NUM++;
+		count++;
+		NUM = (counter_RED + count) % 100;
 		setTimer1(5000, 0);
-		set_update7SEG_VALUE();
 	}
 	if(isButtonPressed(2)){
 		counter_RED = NUM;
 		setTimer1(5000, 0);
-		set_update7SEG_VALUE();
 	}
 
 	if(timer1_flag[1]){
@@ -29,24 +26,7 @@ void run_MODE2(){
 		setTimer1(500, 1);
 	}
 };
-
-
 void run_MODE3(){
-	counter[0] = 3;
-//	NUM = counter_AMBER;
-	set_update7SEG_VALUE();
-	if(isButtonPressed(1)){
-		NUM ++;
-		setTimer1(5000, 0);
-		set_update7SEG_VALUE();
-	}
-	if(isButtonPressed(2)){
-		counter_AMBER = NUM;
-		setTimer1(5000, 0);
-
-	}
-
-
 	if(timer1_flag[1]){
 		HAL_GPIO_TogglePin(LED_AMBER1_GPIO_Port, LED_AMBER1_Pin);
 		HAL_GPIO_TogglePin(LED_AMBER2_GPIO_Port, LED_AMBER2_Pin);
@@ -54,20 +34,6 @@ void run_MODE3(){
 	}
 };
 void run_MODE4(){
-	counter[0] = 4;
-//	NUM = counter_GREEN;
-	set_update7SEG_VALUE();
-	if(isButtonPressed(1)){
-		NUM ++;
-		setTimer1(5000, 0);
-		set_update7SEG_VALUE();
-	}
-	if(isButtonPressed(2)){
-		counter_GREEN = NUM;
-		setTimer1(5000, 0);
-	}
-
-
 	if(timer1_flag[1]){
 		HAL_GPIO_TogglePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin);
 		HAL_GPIO_TogglePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin);

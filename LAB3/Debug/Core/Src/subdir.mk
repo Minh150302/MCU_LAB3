@@ -11,7 +11,6 @@ C_SRCS += \
 ../Core/Src/fns_automata.c \
 ../Core/Src/fns_automata2.c \
 ../Core/Src/fns_mode.c \
-../Core/Src/fns_mode2.c \
 ../Core/Src/func_setting_mode.c \
 ../Core/Src/global.c \
 ../Core/Src/led_traffic.c \
@@ -30,7 +29,6 @@ OBJS += \
 ./Core/Src/fns_automata.o \
 ./Core/Src/fns_automata2.o \
 ./Core/Src/fns_mode.o \
-./Core/Src/fns_mode2.o \
 ./Core/Src/func_setting_mode.o \
 ./Core/Src/global.o \
 ./Core/Src/led_traffic.o \
@@ -49,7 +47,6 @@ C_DEPS += \
 ./Core/Src/fns_automata.d \
 ./Core/Src/fns_automata2.d \
 ./Core/Src/fns_mode.d \
-./Core/Src/fns_mode2.d \
 ./Core/Src/func_setting_mode.d \
 ./Core/Src/global.d \
 ./Core/Src/led_traffic.d \

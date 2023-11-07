@@ -44,7 +44,8 @@ void fns_mode_run(){
 		case MODE_2:
 			run_MODE2();
 			if(timer1_flag[0]){
-				mode = INIT;
+				status[1] = INIT;
+				mode = MODE_1;
 			}
 			if(isButtonPressed(0)){
 				mode = MODE_3;
@@ -60,7 +61,8 @@ void fns_mode_run(){
 		case MODE_3:
 			run_MODE3();
 			if(timer1_flag[0]){
-				mode = INIT;
+				status[1] = INIT;
+				mode = MODE_1;
 			}
 			if(isButtonPressed(0)){
 				mode = MODE_4;
@@ -75,7 +77,8 @@ void fns_mode_run(){
 		case MODE_4:
 			run_MODE4();
 			if(timer1_flag[0]){
-				mode = INIT;
+				status[1] = INIT;
+				mode = MODE_1;
 			}
 			if(isButtonPressed(0)){
 				mode = MODE_1;

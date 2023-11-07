@@ -177,7 +177,7 @@ void set_update7SEG_VALUE(){
 	}
 	else{
 	//mode2, 3, 4
-		counter[3] = counter[0];
+		counter[3] = counter[1];
 		counter[1] = NUM % 10;
 		counter[2] = NUM / 10;
 	}

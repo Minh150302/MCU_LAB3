@@ -4,7 +4,6 @@
 "./Core/Src/fns_automata.o"
 "./Core/Src/fns_automata2.o"
 "./Core/Src/fns_mode.o"
-"./Core/Src/fns_mode2.o"
 "./Core/Src/func_setting_mode.o"
 "./Core/Src/global.o"
 "./Core/Src/led_traffic.o"

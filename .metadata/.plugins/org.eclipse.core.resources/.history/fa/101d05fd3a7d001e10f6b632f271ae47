@@ -12,6 +12,8 @@
 void fns_automata_run(){
 	if(timer3_flag){
 		setTimer3(1000);
+//		counterNUM[0]++;
+//		counterNUM[1]++;
 		counter[0]--;
 		counter[1]--;
 		set_update7SEG_VALUE();

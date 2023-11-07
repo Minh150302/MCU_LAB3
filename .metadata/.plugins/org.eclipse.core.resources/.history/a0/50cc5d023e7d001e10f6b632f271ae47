@@ -11,6 +11,7 @@ int count = 0;
 
 void run_MODE2(){
 	counter[0] = 2;
+	NUM = counter_RED;
 	set_update7SEG_VALUE();
 	if(isButtonPressed(1)){
 		NUM++;
@@ -33,7 +34,7 @@ void run_MODE2(){
 
 void run_MODE3(){
 	counter[0] = 3;
-//	NUM = counter_AMBER;
+	NUM = counter_AMBER;
 	set_update7SEG_VALUE();
 	if(isButtonPressed(1)){
 		NUM ++;
@@ -55,7 +56,7 @@ void run_MODE3(){
 };
 void run_MODE4(){
 	counter[0] = 4;
-//	NUM = counter_GREEN;
+	NUM = counter_GREEN;
 	set_update7SEG_VALUE();
 	if(isButtonPressed(1)){
 		NUM ++;
