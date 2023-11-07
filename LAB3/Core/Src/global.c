@@ -8,11 +8,11 @@
 #include "global.h"
 
 
-int status 	= 0;
-int mode 	= 0;
+int status[2] = {0, 0};
+int mode 	  = 0;
 
 int counter_RED 	= 3;
 int counter_AMBER 	= 1;
 int counter_GREEN 	= 2;
 
-int index	= 0;
+int index	= -1;

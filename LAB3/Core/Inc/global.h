@@ -28,7 +28,7 @@
 #define MODE_3 		13
 #define MODE_4 		14
 
-extern int status;
+extern int status[2];
 extern int mode;
 
 extern int counter_RED;
@@ -36,7 +36,8 @@ extern int counter_AMBER;
 extern int counter_GREEN;
 extern int counter[4];
 
-const int MAX_LED = 4;
+//const int MAX_LED = 4;
+
 extern int index;
 
 #endif /* INC_GLOBAL_H_ */

@@ -169,7 +169,7 @@ void update7SEG(int index){
     }
 }
 
-void set_update7SEG_VALUE(int counter[] ,int NUM ){
+void set_update7SEG_VALUE(int NUM ){
 	//mode1
 	counter[3] = counter[1];
 	counter[2] = counter[0];

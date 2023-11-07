@@ -13,12 +13,9 @@
 
 void ALL_LIGHT_OFF();
 
-void RED_LIGHT1();
-void YELLOW_LIGHT1();
-void GREEN_LIGHT1();
-void RED_LIGHT2();
-void YELLOW_LIGHT2();
-void GREEN_LIGHT2();
+void RED_LIGHT(int i);
+void YELLOW_LIGHT(int i);
+void GREEN_LIGHT(int i);
 
 void RED_BLINK();
 

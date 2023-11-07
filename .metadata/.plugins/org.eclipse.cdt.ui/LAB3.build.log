@@ -1,24 +1,10 @@
-15:50:54 **** Incremental Build of configuration Debug for project LAB3 ****
+12:10:05 **** Incremental Build of configuration Debug for project LAB3 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/fns_automata.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fns_automata.d" -MT"Core/Src/fns_automata.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fns_automata.o"
-In file included from ../Core/Inc/fns_automata.h:11,
-                 from ../Core/Src/fns_automata.c:8:
-../Core/Inc/global.h:40:12: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
-   40 | extern int index;
-      |            ^~~~~
-../Core/Src/fns_automata.c:10:5: error: conflicting types for 'status'
-   10 | int status[2] = 0;
-      |     ^~~~~~
-In file included from ../Core/Inc/fns_automata.h:11,
-                 from ../Core/Src/fns_automata.c:8:
-../Core/Inc/global.h:31:12: note: previous declaration of 'status' was here
-   31 | extern int status;
-      |            ^~~~~~
-../Core/Src/fns_automata.c:10:17: error: invalid initializer
-   10 | int status[2] = 0;
-      |                 ^
-make: *** [Core/Src/subdir.mk:61: Core/Src/fns_automata.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-size   LAB3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10356	     72	   1736	  12164	   2f84	LAB3.elf
+Finished building: default.size.stdout
+ 
 
-15:50:54 Build Failed. 3 errors, 1 warnings. (took 245ms)
+12:10:06 Build Finished. 0 errors, 0 warnings. (took 164ms)
 
